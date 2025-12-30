@@ -37,12 +37,6 @@ app.get('/', (req, res) => {
   res.send('Ciao Amici, API funziona!');
 });
 
-// For local development
-if (process.env.NODE_ENV !== 'production') {
-  app.listen(port, () => {
-    console.log(`Il Server lavora su http://localhost:${port}`);
-  });
-}
-
-// Export for Vercel
-export default app;
+app.listen(port, () => {
+  console.log(`Il Server lavora su http://localhost:${port}`);
+});
