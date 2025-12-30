@@ -1,6 +1,7 @@
 # Quick Deployment Checklist ✅
 
 ## 🚀 Backend (Render)
+
 - [ ] Create Render account at render.com
 - [ ] New Web Service → Connect GitHub repo
 - [ ] Root Directory: `backend`
@@ -13,6 +14,7 @@
 - [ ] Deploy & copy backend URL
 
 ## 🌐 Frontend (Vercel)
+
 - [ ] Create Vercel account at vercel.com
 - [ ] New Project → Import GitHub repo
 - [ ] Root Directory: `frontend`
@@ -21,6 +23,7 @@
 - [ ] Deploy & copy frontend URL
 
 ## 🔧 Admin (Vercel)
+
 - [ ] New Project → Import same GitHub repo
 - [ ] Root Directory: `admin`
 - [ ] Add Environment Variable:
@@ -28,6 +31,7 @@
 - [ ] Deploy & copy admin URL
 
 ## ⚙️ Final Steps
+
 - [ ] Update backend CORS with your Vercel URLs
 - [ ] Test all three deployments
 - [ ] Update MongoDB Atlas to allow all IPs (0.0.0.0/0)

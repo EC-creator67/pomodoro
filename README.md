@@ -5,6 +5,7 @@ A full-stack food delivery application with separate frontend for customers and 
 ## 📋 Features
 
 ### Customer Frontend
+
 - Browse food menu by category
 - Add items to cart
 - User authentication (register/login)
@@ -13,12 +14,14 @@ A full-stack food delivery application with separate frontend for customers and 
 - View order history
 
 ### Admin Panel
+
 - Add/Edit/Delete food items
 - Manage orders
 - View all orders with status
 - Upload food images
 
 ### Backend API
+
 - RESTful API with Express.js
 - MongoDB database with Mongoose
 - JWT authentication
@@ -36,6 +39,7 @@ A full-stack food delivery application with separate frontend for customers and 
 ## 🚀 Quick Start
 
 ### Prerequisites
+
 - Node.js (v16 or higher)
 - MongoDB Atlas account
 - Stripe account (for payments)
@@ -43,12 +47,14 @@ A full-stack food delivery application with separate frontend for customers and 
 ### Local Development
 
 1. **Clone the repository**
+
 ```bash
 git clone https://github.com/EC-creator67/pomodoro.git
 cd pomodoro
 ```
 
 2. **Backend Setup**
+
 ```bash
 cd backend
 npm install
@@ -57,6 +63,7 @@ npm run server
 ```
 
 3. **Frontend Setup**
+
 ```bash
 cd frontend
 npm install
@@ -65,6 +72,7 @@ npm run dev
 ```
 
 4. **Admin Setup**
+
 ```bash
 cd admin
 npm install
@@ -87,6 +95,7 @@ Quick checklist: [DEPLOYMENT_CHECKLIST.md](./DEPLOYMENT_CHECKLIST.md)
 ## 📝 Environment Variables
 
 ### Backend (.env)
+
 ```
 MONGO_URI=your_mongodb_connection_string
 JWT_SECRET=your_jwt_secret
@@ -98,6 +107,7 @@ ADMIN_URL=http://localhost:5174
 ```
 
 ### Frontend & Admin (.env.local)
+
 ```
 VITE_API_URL=http://localhost:4000
 ```

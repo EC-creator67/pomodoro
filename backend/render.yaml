@@ -1,40 +1,24 @@
 {
-  "$schema": "https://render.com/schema/v1",
-  "services": [
-    {
-      "type": "web",
-      "name": "pomodoro-backend",
-      "env": "node",
-      "region": "oregon",
-      "plan": "free",
-      "buildCommand": "npm install",
-      "startCommand": "npm start",
-      "envVars": [
-        {
-          "key": "MONGO_URI",
-          "sync": false
-        },
-        {
-          "key": "JWT_SECRET",
-          "sync": false
-        },
-        {
-          "key": "STRIPE_SECRET_KEY",
-          "sync": false
-        },
-        {
-          "key": "NODE_ENV",
-          "value": "production"
-        },
-        {
-          "key": "FRONTEND_URL",
-          "sync": false
-        },
-        {
-          "key": "ADMIN_URL",
-          "sync": false
-        }
-      ]
-    }
-  ]
+  '$schema': 'https://render.com/schema/v1',
+  'services':
+    [
+      {
+        'type': 'web',
+        'name': 'pomodoro-backend',
+        'env': 'node',
+        'region': 'oregon',
+        'plan': 'free',
+        'buildCommand': 'npm install',
+        'startCommand': 'npm start',
+        'envVars':
+          [
+            { 'key': 'MONGO_URI', 'sync': false },
+            { 'key': 'JWT_SECRET', 'sync': false },
+            { 'key': 'STRIPE_SECRET_KEY', 'sync': false },
+            { 'key': 'NODE_ENV', 'value': 'production' },
+            { 'key': 'FRONTEND_URL', 'sync': false },
+            { 'key': 'ADMIN_URL', 'sync': false },
+          ],
+      },
+    ],
 }

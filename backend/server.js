@@ -7,37 +7,36 @@ import 'dotenv/config';
 import cartRouter from './routes/cartRoute.js';
 import orderRouter from './routes/orderRoute.js';
 
-
 // app config
 const app = express();
 const port = process.env.PORT || 4000;
 
 // middlewares
 app.use(express.json());
-app.use(cors({
-    origin: process.env.NODE_ENV === 'production' 
+app.use(
+  cors({
+    origin:
+      process.env.NODE_ENV === 'production'
         ? [process.env.FRONTEND_URL, process.env.ADMIN_URL]
         : ['http://localhost:5173', 'http://localhost:5174'],
-    credentials: true
-}));
+    credentials: true,
+  })
+);
 
 // connection
 connectDB();
 
-
 // api endpoints
-app.use("/api/food", foodRouter);
-app.use("/images", express.static("uploads"));
-app.use("/api/user", userRouter);
-app.use("/api/cart", cartRouter);
-app.use("/api/order", orderRouter);
+app.use('/api/food', foodRouter);
+app.use('/images', express.static('uploads'));
+app.use('/api/user', userRouter);
+app.use('/api/cart', cartRouter);
+app.use('/api/order', orderRouter);
 
-app.get("/", (req, res) => {
-    res.send("Ciao Amici, API funziona!")
-})
+app.get('/', (req, res) => {
+  res.send('Ciao Amici, API funziona!');
+});
 
 app.listen(port, () => {
-    console.log(`Il Server lavora su http://localhost:${port}`);
-})
-
-
+  console.log(`Il Server lavora su http://localhost:${port}`);
+});

@@ -21,10 +21,12 @@ This guide will help you deploy your full-stack application to production.
 ## Step 1: Deploy Backend to Render
 
 ### 1.1 Create a Render Account
+
 1. Go to [render.com](https://render.com) and sign up
 2. Connect your GitHub account
 
 ### 1.2 Deploy the Backend
+
 1. Click "New +" → "Web Service"
 2. Connect to your GitHub repository: `EC-creator67/pomodoro`
 3. Configure the service:
@@ -38,6 +40,7 @@ This guide will help you deploy your full-stack application to production.
    - **Instance Type**: Free
 
 ### 1.3 Add Environment Variables
+
 In the Render dashboard, add these environment variables:
 
 ```
@@ -48,11 +51,13 @@ NODE_ENV=production
 PORT=4000
 ```
 
-⚠️ **IMPORTANT**: 
+⚠️ **IMPORTANT**:
+
 - Change `JWT_SECRET` to a strong random string (at least 32 characters)
 - Add your actual Stripe secret key if you're using payments
 
 ### 1.4 Deploy
+
 1. Click "Create Web Service"
 2. Wait for deployment to complete (5-10 minutes)
 3. Copy your backend URL: `https://pomodoro-backend-xxxx.onrender.com`
@@ -62,10 +67,12 @@ PORT=4000
 ## Step 2: Deploy Frontend to Vercel
 
 ### 2.1 Create a Vercel Account
+
 1. Go to [vercel.com](https://vercel.com) and sign up
 2. Connect your GitHub account
 
 ### 2.2 Deploy Frontend
+
 1. Click "Add New..." → "Project"
 2. Import your GitHub repository: `EC-creator67/pomodoro`
 3. Configure the project:
@@ -76,6 +83,7 @@ PORT=4000
    - **Install Command**: `npm install`
 
 ### 2.3 Add Environment Variables
+
 In the Vercel project settings, add:
 
 ```
@@ -85,6 +93,7 @@ VITE_API_URL=https://pomodoro-backend-xxxx.onrender.com
 Replace `xxxx` with your actual Render backend URL (from Step 1.4)
 
 ### 2.4 Deploy
+
 1. Click "Deploy"
 2. Wait for deployment to complete
 3. Your frontend will be live at: `https://pomodoro-xxxx.vercel.app`
@@ -94,6 +103,7 @@ Replace `xxxx` with your actual Render backend URL (from Step 1.4)
 ## Step 3: Deploy Admin Panel to Vercel
 
 ### 3.1 Deploy Admin
+
 1. In Vercel, click "Add New..." → "Project"
 2. Import the same GitHub repository again
 3. Configure the project:
@@ -104,6 +114,7 @@ Replace `xxxx` with your actual Render backend URL (from Step 1.4)
    - **Install Command**: `npm install`
 
 ### 3.2 Add Environment Variables
+
 In the Vercel project settings, add:
 
 ```
@@ -111,6 +122,7 @@ VITE_API_URL=https://pomodoro-backend-xxxx.onrender.com
 ```
 
 ### 3.3 Deploy
+
 1. Click "Deploy"
 2. Wait for deployment to complete
 3. Your admin panel will be live at: `https://pomodoro-admin-xxxx.vercel.app`
@@ -125,15 +137,17 @@ After deploying frontend and admin, you need to update the backend to allow requ
 2. Update `server.js` to include your deployed URLs in CORS configuration:
 
 ```javascript
-app.use(cors({
+app.use(
+  cors({
     origin: [
-        'http://localhost:5173',
-        'http://localhost:5174',
-        'https://pomodoro-xxxx.vercel.app',
-        'https://pomodoro-admin-xxxx.vercel.app'
+      'http://localhost:5173',
+      'http://localhost:5174',
+      'https://pomodoro-xxxx.vercel.app',
+      'https://pomodoro-admin-xxxx.vercel.app',
     ],
-    credentials: true
-}));
+    credentials: true,
+  })
+);
 ```
 
 3. Commit and push the changes - Render will auto-deploy
@@ -143,18 +157,23 @@ app.use(cors({
 ## Step 5: Test Your Deployment
 
 ### Backend API
+
 Test your backend: `https://pomodoro-backend-xxxx.onrender.com`
 
 You should see: "Ciao Amici, API funziona!"
 
 ### Frontend
+
 Visit: `https://pomodoro-xxxx.vercel.app`
+
 - Test user registration
 - Test adding items to cart
 - Test the order flow
 
 ### Admin Panel
+
 Visit: `https://pomodoro-admin-xxxx.vercel.app`
+
 - Login as admin
 - Test adding/removing food items
 - Check orders
@@ -166,26 +185,31 @@ Visit: `https://pomodoro-admin-xxxx.vercel.app`
 ### Free Tier Limitations
 
 **Render (Backend)**:
+
 - ✅ Free for 750 hours/month
 - ⚠️ Spins down after 15 minutes of inactivity (cold start = 30-60 seconds)
 - ⚠️ Limited to 512MB RAM
 - 💡 First request after inactivity will be slow
 
 **Vercel (Frontend/Admin)**:
+
 - ✅ Unlimited bandwidth
 - ✅ Automatic HTTPS
 - ✅ Global CDN
 - ✅ Instant deployments
 
 ### File Uploads
+
 ⚠️ **Important**: The current setup saves uploaded images to the server's file system. On Render's free tier, these files will be deleted when the server restarts.
 
 **Recommended Solution**: Use a cloud storage service like:
+
 - Cloudinary (free tier: 25GB storage)
 - AWS S3
 - DigitalOcean Spaces
 
 ### Database
+
 ✅ Your MongoDB Atlas database is already configured and will work in production.
 
 ---
@@ -193,6 +217,7 @@ Visit: `https://pomodoro-admin-xxxx.vercel.app`
 ## Continuous Deployment
 
 Your apps are now set up for **automatic deployment**:
+
 - Push to GitHub → Vercel and Render automatically deploy
 - No manual deployment needed!
 
@@ -201,18 +226,22 @@ Your apps are now set up for **automatic deployment**:
 ## Troubleshooting
 
 ### Backend not connecting to database
+
 - Check MongoDB Atlas allows connections from anywhere (0.0.0.0/0)
 - Verify MONGO_URI environment variable in Render
 
 ### CORS errors
+
 - Make sure backend CORS includes your Vercel URLs
 - Check if URLs in environment variables match exactly
 
 ### Images not loading
+
 - Check that VITE_API_URL environment variable is set correctly
 - Verify backend is serving static files from `/uploads`
 
 ### Cold starts (backend slow on first request)
+
 - This is normal on Render's free tier
 - Consider upgrading to paid plan for always-on instances
 
@@ -231,7 +260,7 @@ Your apps are now set up for **automatic deployment**:
 ## Support URLs
 
 - **Backend**: https://pomodoro-backend-xxxx.onrender.com
-- **Frontend**: https://pomodoro-xxxx.vercel.app  
+- **Frontend**: https://pomodoro-xxxx.vercel.app
 - **Admin**: https://pomodoro-admin-xxxx.vercel.app
 
 Replace `xxxx` with your actual deployment IDs.
