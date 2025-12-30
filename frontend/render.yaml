@@ -13,13 +13,6 @@
           "sync": false
         }
       ],
-      "headers": [
-        {
-          "path": "/*",
-          "name": "X-Frame-Options",
-          "value": "sameorigin"
-        }
-      ],
       "routes": [
         {
           "type": "rewrite",
