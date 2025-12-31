@@ -80,7 +80,7 @@ const Navbar = ({ setShowLogin }) => {
             className={`${
               getTotalCartAmount() === 0
                 ? ''
-                : 'absolute min-w-[10px] min-h-[10px] bg-orange-500 -top-[6px] right-[76px]'
+                : 'absolute min-w-[10px] min-h-[10px] bg-orange-500 -top-[6px] right-[116px]'
             }`}
           ></div>
         </div>
