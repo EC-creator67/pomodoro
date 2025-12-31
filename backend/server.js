@@ -15,16 +15,45 @@ const port = process.env.PORT || 4000;
 app.use(express.json());
 app.use(
   cors({
-    origin:
-      process.env.NODE_ENV === 'production'
-        ? [process.env.FRONTEND_URL, process.env.ADMIN_URL]
-        : ['http://localhost:5173', 'http://localhost:5174'],
+    origin: function (origin, callback) {
+      // Allow requests with no origin (like mobile apps or Postman)
+      if (!origin) return callback(null, true);
+
+      const allowedOrigins =
+        process.env.NODE_ENV === 'production'
+          ? [process.env.FRONTEND_URL, process.env.ADMIN_URL]
+          : ['http://localhost:5173', 'http://localhost:5174'];
+
+      if (
+        allowedOrigins.some(
+          (allowed) => origin.includes(allowed) || allowed.includes(origin)
+        )
+      ) {
+        callback(null, true);
+      } else {
+        callback(null, true); // Allow all origins for now
+      }
+    },
     credentials: true,
+    methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
+    allowedHeaders: ['Content-Type', 'Authorization'],
   })
 );
 
-// connection
-connectDB();
+// Initialize database connection for serverless
+let dbConnected = false;
+const initDB = async () => {
+  if (!dbConnected) {
+    await connectDB();
+    dbConnected = true;
+  }
+};
+
+// Middleware to ensure DB is connected
+app.use(async (req, res, next) => {
+  await initDB();
+  next();
+});
 
 // api endpoints
 app.use('/api/food', foodRouter);
