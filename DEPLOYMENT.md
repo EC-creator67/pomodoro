@@ -44,7 +44,7 @@ This guide will help you deploy your full-stack application to production.
 In the Render dashboard, add these environment variables:
 
 ```
-MONGO_URI=mongodb+srv://EC_Web:ecweb123@pomodoro.xbvgp1g.mongodb.net/Pomodoro
+MONGO_URI=mongodb+srv://your-string-here
 JWT_SECRET=your-secret-key-here-change-this
 STRIPE_SECRET_KEY=your-stripe-secret-key-here
 NODE_ENV=production
