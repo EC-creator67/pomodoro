@@ -28,7 +28,11 @@ const Cart = () => {
                   <div className="flex justify-center">
                     <img
                       className="w-16 h-16 rounded-md object-cover"
-                      src={url + '/images/' + item.image}
+                      src={
+                        item.image.startsWith('http')
+                          ? item.image
+                          : url + '/images/' + item.image
+                      }
                       alt=""
                     />
                   </div>
