@@ -19,13 +19,16 @@ const Navbar = ({ setShowLogin }) => {
   return (
     <div className="sticky top-0 z-50 backdrop-blur-xl bg-white/60 dark:bg-gray-950/80 border-b border-gray-200/20
      dark:border-gray-800/20 transition-all duration-300 flex justify-between p-4 -mb-3">
-      <div>        
+      <div>     
+        <a href="/">
         <div className="-mb-10">
           <p className="flex flex-col text-red-500 italic -mt-3 font-bold text-3xl">Pomodoro
             <span className="text-green-600 -mt-2">Ristorante</span>
             </p>
       <div className=" text-green-400 border "></div>
         </div>
+        </a>   
+
       </div>
       <ul className="hidden lg:flex gap-5 font-semibold text-violet-800 cursor-pointer">
         {/* <Link
