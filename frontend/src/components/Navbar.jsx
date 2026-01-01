@@ -19,16 +19,16 @@ const Navbar = ({ setShowLogin }) => {
   return (
     <div className="sticky top-0 z-50 backdrop-blur-xl bg-white/60 dark:bg-gray-950/80 border-b border-gray-200/20
      dark:border-gray-800/20 transition-all duration-300 flex justify-between p-4 -mb-3">
-      <Link to="/">        
+      <div>        
         <div className="-mb-10">
           <p className="flex flex-col text-red-500 italic -mt-3 font-bold text-3xl">Pomodoro
             <span className="text-green-600 -mt-2">Ristorante</span>
             </p>
       <div className=" text-green-400 border "></div>
         </div>
-      </Link>
+      </div>
       <ul className="hidden lg:flex gap-5 font-semibold text-violet-800 cursor-pointer">
-        <Link
+        {/* <Link
           to={'/'}
           onClick={() => setMenu('home')}
           className={` ${
@@ -36,7 +36,17 @@ const Navbar = ({ setShowLogin }) => {
           } text-2xl`}
         >
           Home
-        </Link>
+        </Link> */}
+
+        <a
+          href="#home"
+          onClick={() => setMenu('home')}
+          className={` ${
+            menu === 'home' ? ' pb-2 border-b-2 border-orange-500' : ''
+          } text-2xl`}
+        >
+          Home
+        </a>
          <a
           href="#explore-menu"
           onClick={() => setMenu('menu')}
@@ -80,7 +90,7 @@ const Navbar = ({ setShowLogin }) => {
             className={`${
               getTotalCartAmount() === 0
                 ? ''
-                : 'absolute min-w-[10px] min-h-[10px] bg-orange-500 -top-[6px] right-[116px]'
+                : 'absolute min-w-[10px] min-h-[10px] bg-orange-500 -top-[6px] right-[76px]'
             }`}
           ></div>
         </div>

@@ -3,7 +3,7 @@ import { assets } from '../assets/assets'
 
 const AppDownload = () => {
   return (
-    <div className='flex flex-col items-center p-25 justify-center' id='app-download'>
+    <div className='flex flex-col items-center p-25 justify-center' id='app-download'>    
         <p className='flex text-center text-xl '>
             Per migliorare l'esperienza Download</p>
              <span className='text-orange-500 text-2xl font-semibold'>

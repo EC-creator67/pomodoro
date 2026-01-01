@@ -9,8 +9,8 @@ import AppDownload from '../components/AppDownload';
 const Home = () => {
   const [category, setCategory] = useState('All');
   return (
-    <div>
-    <Header />
+    <div id='home'>      
+    <Header/>
     <ExploreMenu category={category} setCategory={setCategory}/>
     <FoodListDisplay category={category}/>
     <AppDownload />
