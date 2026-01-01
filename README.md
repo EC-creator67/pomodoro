@@ -88,9 +88,9 @@ Quick checklist: [DEPLOYMENT_CHECKLIST.md](./DEPLOYMENT_CHECKLIST.md)
 
 ## 🌐 Live Demo
 
-- **Frontend**: [Your Vercel URL]
-- **Admin Panel**: [Your Vercel URL]
-- **Backend API**: [Your Render URL]
+- **Frontend**: [https://pomodoro-frontend-sage.vercel.app]
+- **Admin Panel**: [https://pomodoro-r1k8-admin.vercel.app]
+- **Backend API**: [https://pomodoro-two-fawn.vercel.app]
 
 ## 📝 Environment Variables
 
