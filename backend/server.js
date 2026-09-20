@@ -40,6 +40,9 @@ app.use(
   })
 );
 
+// Assicurati che il nome della cartella 'uploads' coincida perfettamente
+app.use('/images', express.static('uploads'));
+
 // Middleware per garantire la connessione al DB
 app.use(async (req, res, next) => {
   try {
