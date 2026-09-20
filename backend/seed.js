@@ -12,7 +12,7 @@ const seedProducts = async () => {
      {
             
              name: "Maccheroni pasta",
-             image: "food_1.png",
+             image: "food_1.jpg",
              price: 12,
              description: " Cibo che fornisce essenziali nutrienti per la nostra salute e benessere. ",
              category: "Pasta"
@@ -20,7 +20,7 @@ const seedProducts = async () => {
          {
             
              name: "Maccheroni al pomodoro",
-             image: "food_2.png",
+             image: "food_2.jpg",
              price: 18,
              description: " Cibo che fornisce essenziali nutrienti per la nostra salute e benessere. ",
              category: "Pasta"
@@ -234,7 +234,7 @@ const seedProducts = async () => {
          }, {
              
              name: "Cooked Cheese",
-             image: "food_32.png",
+             image: "food_32.jpg",
              price: 15,
              description: " Cibo che fornisce essenziali nutrienti per la nostra salute e benessere. ",
              category: "Pure Veg"
