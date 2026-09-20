@@ -27,70 +27,70 @@ const seedProducts = async () => {
          }, {
             
              name: "Dolce Torre",
-             image: "food_3.png",
+             image: "food_3.jpg",
              price: 16,
              description: " Cibo che fornisce essenziali nutrienti per la nostra salute e benessere. ",
              category: "Desserts"
          }, {
             
              name: "Agnello e Veg",
-             image: "food_4.png",
+             image: "food_4.jpg",
              price: 24,
              description: " Cibo che fornisce essenziali nutrienti per la nostra salute e benessere. ",
              category: "Rolls"
          }, {
             
              name: "Eggs Sandwich",
-             image: "food_5.png",
+             image: "food_5.jpg",
              price: 14,
              description: " Cibo che fornisce essenziali nutrienti per la nostra salute e benessere. ",
              category: "Sandwich"
          }, {
             
              name: "Peri Peri Rolls",
-             image: "food_6.png",
+             image: "food_6.jpg",
              price: 12,
              description: " Cibo che fornisce essenziali nutrienti per la nostra salute e benessere. ",
              category: "Rolls"
          }, {
             
              name: "Straccetti",
-             image: "food_7.png",
+             image: "food_7.jpg",
              price: 20,
              description: " Cibo che fornisce essenziali nutrienti per la nostra salute e benessere. ",
              category: "Salad"
          }, {
             
              name: "Incanto",
-             image: "food_8.png",
+             image: "food_8.jpg",
              price: 15,
              description: " Cibo che fornisce essenziali nutrienti per la nostra salute e benessere. ",
              category: "Salad"
          }, {
             
              name: "Deliziosi Tocchi",
-             image: "food_9.png",
+             image: "food_9.jpg",
              price: 14,
              description: " Cibo che fornisce essenziali nutrienti per la nostra salute e benessere. ",
              category: "Desserts"
          }, {
             
              name: "Veg Cheese",
-             image: "food_10.png",
+             image: "food_10.jpg",
              price: 22,
              description: " Cibo che fornisce essenziali nutrienti per la nostra salute e benessere. ",
              category: "Pure Veg"
          }, {
             
              name: "Egg Salad",
-             image: "food_11.png",
+             image: "food_11.jpg",
              price: 10,
              description: " Cibo che fornisce essenziali nutrienti per la nostra salute e benessere. ",
              category: "Salad"
          }, {
             
              name: "Spaghetti Delizia",
-             image: "food_12.png",
+             image: "food_12.jpg",
              price: 12,
              description: " Cibo che fornisce essenziali nutrienti per la nostra salute e benessere. ",
              category: "Noodles"
@@ -98,7 +98,7 @@ const seedProducts = async () => {
          {
             
              name: "Spaghetti Chicken",
-             image: "food_13.png",
+             image: "food_13.jpg",
              price: 12,
              description: " Cibo che fornisce essenziali nutrienti per la nostra salute e benessere. ",
              category: "Noodles"
@@ -106,77 +106,77 @@ const seedProducts = async () => {
          {
             
              name: "Fruits & Fruits",
-             image: "food_14.png",
+             image: "food_14.jpg",
              price: 18,
              description: " Cibo che fornisce essenziali nutrienti per la nostra salute e benessere. ",
              category: "Desserts"
          }, {
             
              name: "Party Fruits",
-             image: "food_15.png",
+             image: "food_15.jpg",
              price: 16,
              description: " Cibo che fornisce essenziali nutrienti per la nostra salute e benessere. ",
              category: "Desserts"
          }, {
             
              name: "Bread Sandwich",
-             image: "food_16.png",
+             image: "food_16.jpg",
              price: 24,
              description: " Cibo che fornisce essenziali nutrienti per la nostra salute e benessere. ",
              category: "Sandwich"
          }, {
             
              name: "Deliciuos Pasta",
-             image: "food_17.png",
+             image: "food_17.jpg",
              price: 14,
              description: " Cibo che fornisce essenziali nutrienti per la nostra salute e benessere. ",
              category: "Pasta"
          }, {
             
              name: "Just eat",
-             image: "food_18.png",
+             image: "food_18.jpg",
              price: 12,
              description: " Cibo che fornisce essenziali nutrienti per la nostra salute e benessere. ",
              category: "Rolls"
          }, {
             
              name: "Cacciatora Noodles",
-             image: "food_19.png",
+             image: "food_19.jpg",
              price: 20,
              description: " Cibo che fornisce essenziali nutrienti per la nostra salute e benessere. ",
              category: "Noodles"
          }, {
             
              name: "Pasta Bolognese",
-             image: "food_20.png",
+             image: "food_20.jpg",
              price: 15,
              description: " Cibo che fornisce essenziali nutrienti per la nostra salute e benessere. ",
              category: "Pasta"
          }, {
             
              name: "Garlic Mushroom ",
-             image: "food_21.png",
+             image: "food_21.jpg",
              price: 14,
              description: " Cibo che fornisce essenziali nutrienti per la nostra salute e benessere. ",
              category: "Pure Veg"
          }, {
             
              name: "Fried Cauliflower",
-             image: "food_22.png",
+             image: "food_22.jpg",
              price: 22,
              description: " Cibo che fornisce essenziali nutrienti per la nostra salute e benessere. ",
              category: "Pure Veg"
          }, {
             
              name: "Mix Veg Pulao",
-             image: "food_23.png",
+             image: "food_23.jpg",
              price: 10,
              description: " Cibo che fornisce essenziali nutrienti per la nostra salute e benessere. ",
              category: "Pure Veg"
          }, {
             
              name: "Rice Zucchini",
-             image: "food_24.png",
+             image: "food_24.jpg",
              price: 12,
              description: " Cibo che fornisce essenziali nutrienti per la nostra salute e benessere. ",
              category: "Pure Veg"
@@ -184,7 +184,7 @@ const seedProducts = async () => {
          {
         
              name: "Funny Fruits",
-             image: "food_25.png",
+             image: "food_25.jpg",
              price: 12,
              description: " Cibo che fornisce essenziali nutrienti per la nostra salute e benessere. ",
              category: "Desserts"
@@ -192,42 +192,42 @@ const seedProducts = async () => {
          {
              
              name: "Double Crispy Burger",
-             image: "food_26.png",
+             image: "food_26.jpg",
              price: 18,
              description: " Cibo che fornisce essenziali nutrienti per la nostra salute e benessere. ",
              category: "Sandwich"
          }, {
              
              name: "Cheese Burger",
-             image: "food_27.png",
+             image: "food_27.jpg",
              price: 16,
              description: " Cibo che fornisce essenziali nutrienti per la nostra salute e benessere. ",
              category: "Sandwich"
          }, {
              
              name: "Yummy",
-             image: "food_28.png",
+             image: "food_28.jpg",
              price: 24,
              description: " Cibo che fornisce essenziali nutrienti per la nostra salute e benessere. ",
              category: "Rolls"
          }, {
              
              name: "Buttter Noodles",
-             image: "food_29.png",
+             image: "food_29.jpg",
              price: 14,
              description: " Cibo che fornisce essenziali nutrienti per la nostra salute e benessere. ",
              category: "Noodles"
          }, {
              
              name: "Veg Noodles",
-             image: "food_30.png",
+             image: "food_30.jpg",
              price: 12,
              description: " Cibo che fornisce essenziali nutrienti per la nostra salute e benessere. ",
              category: "Noodles"
          }, {
              
              name: "Somen Noodles",
-             image: "food_31.png",
+             image: "food_31.jpg",
              price: 20,
              description: " Cibo che fornisce essenziali nutrienti per la nostra salute e benessere. ",
              category: "Noodles"
