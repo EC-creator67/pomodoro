@@ -10,7 +10,8 @@
   "scripts": {
     "start": "node server.js",
     "server": "nodemon server.js",
-    "vercel-build": "echo 'Build complete'"
+    "vercel-build": "echo 'Build complete'",
+    "seed": "node seed.js"
   },
   "keywords": [],
   "author": "",
