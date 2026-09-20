@@ -16,7 +16,9 @@ const ExploreMenu = ({category, setCategory}) => {
             return (
                 <div className='w-40 h-40 ' key={index} 
                 onClick={()=> setCategory(prev => prev === item.menu_name ? 'All' : item.menu_name)}>
-                    <img className={category === item.menu_name ? "border-3 border-orange-500 p-2 rounded-full" : ""} src={item.menu_image} alt="" />
+                    <img className={category === item.menu_name
+                       ? "border-3 border-orange-500 p-2 rounded-full" 
+                       : ""} src={item.menu_image} alt="" />
                     <p className='text-center mt-6 text-[#747474] font-semibold'>
                       {item.menu_name}</p>
                 </div>

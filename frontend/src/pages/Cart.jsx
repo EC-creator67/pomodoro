@@ -24,7 +24,8 @@ const Cart = () => {
           if (cartItems[item._id] > 0) {
             return (
               <div key={index}>
-                <div className="grid grid-cols-6 items-center gap-4 py-4 px-4 hover:bg-gray-50 transition duration-200">
+                <div className="grid grid-cols-6 items-center gap-4 py-4 px-4 hover:bg-gray-50
+                 transition duration-200">
                   <div className="flex justify-center">
                     <img
                       className="w-16 h-16 rounded-md object-cover"
@@ -40,7 +41,8 @@ const Cart = () => {
                     {item.name}
                   </p>
                   <p className="text-center text-gray-600">$ {item.price}</p>
-                  <p className="text-center font-semibold bg-orange-100 text-orange-800 rounded-full w-8 h-8 flex items-center justify-center mx-auto">
+                  <p className="text-center font-semibold bg-orange-100 text-orange-800 rounded-full
+                   w-8 h-8 flex items-center justify-center mx-auto">
                     {cartItems[item._id]}
                   </p>
                   <p className="text-center font-semibold text-green-600">
@@ -88,7 +90,8 @@ const Cart = () => {
             </div>
             <button
               onClick={() => navigate('/order')}
-              className="w-full mt-4 bg-orange-500 hover:bg-orange-600 text-white py-3 px-6 rounded-lg font-medium transition duration-200"
+              className="w-full mt-4 bg-orange-500 hover:bg-orange-600 text-white py-3 px-6 
+              rounded-lg font-medium transition duration-200"
             >
               Procedi al Checkout
             </button>

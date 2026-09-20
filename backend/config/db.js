@@ -13,8 +13,7 @@ export const connectDB = async () => {
 
   try {
     const mongoUri =
-      process.env.MONGODB_URI ||
-      'mongodb+srv://EC_Web:ecweb123@pomodoro.xbvgp1g.mongodb.net/Pomodoro';
+      process.env.MONGODB_URI || '';
 
     const connection = await mongoose.connect(mongoUri, {
       bufferCommands: false,

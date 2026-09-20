@@ -10,7 +10,7 @@ const Footer = () => {
       <div className="w-[100%] grid lg:grid-cols-[2fr_1fr_1fr] gap-10">
         <div className="-mt-3">
           <a className="" href="/">
-            {/* <img className=" rounded-md mb-7" src={assets.logo} alt="" /> */}
+      
               <div className="mb-6">
           <p className="flex flex-col text-red-500 italic -mt-3 font-bold text-3xl">Pomodoro
             <span className="text-green-600 -mt-2">Ristorante</span>

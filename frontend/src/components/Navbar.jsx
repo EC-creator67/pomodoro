@@ -1,4 +1,4 @@
-  import React, { useContext, useState } from 'react';
+import React, { useContext, useState } from 'react';
 import { assets } from '../assets/assets';
 import { Link, useNavigate } from 'react-router-dom';
 import { StoreContext } from '../context/StoreContext';
@@ -10,37 +10,31 @@ const Navbar = ({ setShowLogin }) => {
 
   const navigate = useNavigate();
 
-  const logout = () =>{
+  const logout = () => {
     localStorage.removeItem('token');
     setToken('');
     navigate('/');
-  }
+  };
 
   return (
-    <div className="sticky top-0 z-50 backdrop-blur-xl bg-white/60 dark:bg-gray-950/80 border-b border-gray-200/20
-     dark:border-gray-800/20 transition-all duration-300 flex justify-between p-4 -mb-3">
-      <div>     
+    <div
+      className="sticky top-0 z-50 backdrop-blur-xl bg-white/60 dark:bg-orange-400/70
+       border-b border-gray-200/20
+     dark:border-gray-800/20 transition-all duration-300 flex justify-between p-4 -mb-3"
+    >
+      <div>
         <a href="/">
-        <div className="-mb-10">
-          <p className="flex flex-col text-red-500 italic -mt-3 font-bold text-3xl">Pomodoro
-            <span className="text-green-600 -mt-2">Ristorante</span>
+          <div className="-mb-10">
+            <p className="flex flex-col text-red-500 italic -mt-3 font-bold text-3xl">
+              Pomodoro
+              <span className="text-green-600 -mt-2">Ristorante</span>
             </p>
-      <div className=" text-green-400 border "></div>
-        </div>
-        </a>   
-
+            <div className=" text-green-400 border "></div>
+          </div>
+        </a>
       </div>
-      <ul className="hidden lg:flex gap-5 font-semibold text-violet-800 cursor-pointer">
-        {/* <Link
-          to={'/'}
-          onClick={() => setMenu('home')}
-          className={` ${
-            menu === 'home' ? ' pb-2 border-b-2 border-orange-500' : ''
-          } text-2xl`}
-        >
-          Home
-        </Link> */}
 
+      <ul className="hidden lg:flex gap-5 font-semibold text-violet-800 cursor-pointer">
         <a
           href="#home"
           onClick={() => setMenu('home')}
@@ -50,7 +44,7 @@ const Navbar = ({ setShowLogin }) => {
         >
           Home
         </a>
-         <a
+        <a
           href="#explore-menu"
           onClick={() => setMenu('menu')}
           className={` ${
@@ -78,10 +72,10 @@ const Navbar = ({ setShowLogin }) => {
           Contattaci
         </a>
       </ul>
+
       <div className="flex space-x-5 relative ">
         <img
           className="cursor-pointer mr-6 w-5"
-       
           src={assets.search_icon}
           alt="search-icon"
         />
@@ -97,7 +91,7 @@ const Navbar = ({ setShowLogin }) => {
             }`}
           ></div>
         </div>
-        
+
         {!token ? (
           <button
             onClick={() => setShowLogin(true)}
@@ -122,14 +116,18 @@ const Navbar = ({ setShowLogin }) => {
                 className="absolute top-8 right-0 z-10 bg-white p-8 rounded-md 
               shadow-md"
               >
-                <li onClick={() => navigate('/myorders')}
-                 className="flex items-center gap-2  px-8 py-2 cursor-pointer hover:bg-orange-300 rounded transition duration-200">
+                <li
+                  onClick={() => navigate('/myorders')}
+                  className="flex items-center gap-2  px-8 py-2 cursor-pointer hover:bg-orange-300 
+                  rounded transition duration-200"
+                >
                   <img src={assets.bag_icon} alt="" />
                   <p>Ordini</p>
                 </li>
                 <hr className="my-2" />
                 <li
-                  className="flex items-center gap-2 py-2 px-8 cursor-pointer hover:bg-gray-300 rounded transition duration-200"
+                  className="flex items-center gap-2 py-2 px-8 cursor-pointer hover:bg-gray-300 
+                  rounded transition duration-200"
                   onClick={logout}
                 >
                   <img src={assets.logout_icon} alt="" />

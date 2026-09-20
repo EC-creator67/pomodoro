@@ -4,11 +4,11 @@ import { assets } from '../assets/assets';
 
 const Sidebar = () => {
   return (
-    <div className=" min-h-screen w-40 bg-white border-r">
+    <div className=" min-h-screen w-50 bg-white border-r">
       <div className="flex flex-col mb-5 ">
         <NavLink
           className={({ isActive }) =>
-            `flex items-center py-5 pl-5 gap-2 border-b ${isActive ? "bg-red-500" : "bg-white"}`
+            `flex items-center py-3 pl-5 gap-2 border-b ${isActive ? "bg-red-500" : "bg-white"}`
           }
           to="/add"
         >
