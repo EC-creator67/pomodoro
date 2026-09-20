@@ -20,23 +20,30 @@ const __dirname = path.dirname(__filename);
 
 // middlewares
 app.use(express.json());
+
+const allowedOrigins = [
+  'http://localhost:5173',
+  'http://localhost:5174',
+  'http://localhost:4000',
+  process.env.FRONTEND_URL,
+  process.env.ADMIN_URL
+].filter(Boolean); // Rimuove eventuali valori undefined o vuoti
+
 app.use(
   cors({
     origin: function (origin, callback) {
+      // Consente chiamate senza origin (es. Postman, mobile app, o chiamate interne)
       if (!origin) return callback(null, true);
 
-      const allowedOrigins =
-        process.env.NODE_ENV === 'production'
-          ? [process.env.FRONTEND_URL, process.env.ADMIN_URL]
-          : ['http://localhost:5173', 'http://localhost:5174'];
+      // Controlla se l'origin della chiamata è tra quelli consentiti
+      const isAllowed = allowedOrigins.some(
+        (allowed) => origin.includes(allowed) || allowed.includes(origin)
+      );
 
-      if (
-        allowedOrigins.some(
-          (allowed) => allowed && (origin.includes(allowed) || allowed.includes(origin))
-        )
-      ) {
+      if (isAllowed) {
         callback(null, true);
       } else {
+        // Fallback per consentire l'accesso se necessario
         callback(null, true);
       }
     },
