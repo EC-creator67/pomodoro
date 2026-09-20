@@ -7,9 +7,19 @@ import 'dotenv/config';
 import cartRouter from './routes/cartRoute.js';
 import orderRouter from './routes/orderRoute.js';
 
+import path from 'path';
+import { fileURLToPath } from 'url';
+
 // app config
 const app = express();
 const port = process.env.PORT || 4000;
+
+// Ricostruzione di __dirname per moduli ES (import)
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
+
+// Sostituisci la vecchia riga app.use('/images', express.static('uploads')); con questa:
+app.use('/images', express.static(path.join(__dirname, 'uploads')));
 
 // middlewares
 app.use(express.json());
