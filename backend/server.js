@@ -40,14 +40,16 @@ app.use(
   })
 );
 
-// Initialize database connection for serverless
-let dbConnected = false;
-const initDB = async () => {
-  if (!dbConnected) {
+// Middleware per garantire la connessione al DB (gestito con try/catch)
+app.use(async (req, res, next) => {
+  try {
     await connectDB();
-    dbConnected = true;
+    next();
+  } catch (error) {
+    console.error('Database connection failed in middleware:', error);
+    res.status(500).json({ success: false, message: 'Impossibile connettersi al Database' });
   }
-};
+});
 
 // Middleware to ensure DB is connected
 app.use(async (req, res, next) => {
@@ -66,9 +68,17 @@ app.get('/', (req, res) => {
 });
 
 // Start server for local development
+// Start server per sviluppo locale
 if (process.env.NODE_ENV !== 'production') {
-  app.listen(port, () => {
+  app.listen(port, async () => {
     console.log(`Il Server lavora su http://localhost:${port}`);
+    
+    // Chiamiamo la connessione SUBITO all'avvio del server!
+    try {
+      await connectDB();
+    } catch (error) {
+      console.error('Errore connessione iniziale al DB:', error.message);
+    }
   });
 }
 
