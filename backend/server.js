@@ -53,7 +53,7 @@ app.use(async (req, res, next) => {
 
 // Middleware to ensure DB is connected
 app.use(async (req, res, next) => {
-  await initDB();
+  await connectDB();
   next();
 });
 

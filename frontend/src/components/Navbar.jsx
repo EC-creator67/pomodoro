@@ -18,7 +18,7 @@ const Navbar = ({ setShowLogin }) => {
 
   return (
     <div
-      className="sticky top-0 z-50 backdrop-blur-xl bg-white/60 dark:bg-orange-400/70
+      className="sticky top-0 z-50 backdrop-blur-xl bg-white/60 dark:bg-orange-400/60
        border-b border-gray-200/20
      dark:border-gray-800/20 transition-all duration-300 flex justify-between p-4 -mb-3"
     >
