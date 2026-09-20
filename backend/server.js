@@ -26,7 +26,7 @@ app.use(
 
       if (
         allowedOrigins.some(
-          (allowed) => origin.includes(allowed) || allowed.includes(origin)
+          (allowed) => allowed && (origin.includes(allowed) || allowed.includes(origin))
         )
       ) {
         callback(null, true);
@@ -40,7 +40,7 @@ app.use(
   })
 );
 
-// Middleware per garantire la connessione al DB (gestito con try/catch)
+// Middleware per garantire la connessione al DB
 app.use(async (req, res, next) => {
   try {
     await connectDB();
@@ -49,12 +49,6 @@ app.use(async (req, res, next) => {
     console.error('Database connection failed in middleware:', error);
     res.status(500).json({ success: false, message: 'Impossibile connettersi al Database' });
   }
-});
-
-// Middleware to ensure DB is connected
-app.use(async (req, res, next) => {
-  await connectDB();
-  next();
 });
 
 // api endpoints
@@ -67,20 +61,14 @@ app.get('/', (req, res) => {
   res.send('Ciao Amici, API funziona!');
 });
 
-// Start server for local development
-// Start server per sviluppo locale
-if (process.env.NODE_ENV !== 'production') {
-  app.listen(port, async () => {
-    console.log(`Il Server lavora su http://localhost:${port}`);
-    
-    // Chiamiamo la connessione SUBITO all'avvio del server!
-    try {
-      await connectDB();
-    } catch (error) {
-      console.error('Errore connessione iniziale al DB:', error.message);
-    }
-  });
-}
+// Avvio del server sia in Locale che su Render
+app.listen(port, '0.0.0.0', async () => {
+  console.log(`Il Server lavora sulla porta ${port}`);
+  try {
+    await connectDB();
+  } catch (error) {
+    console.error('Errore connessione iniziale al DB:', error.message);
+  }
+});
 
-// Export for Vercel serverless
 export default app;
