@@ -18,15 +18,11 @@ const port = process.env.PORT || 4000;
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
-// Sostituisci la vecchia riga app.use('/images', express.static('uploads')); con questa:
-app.use('/images', express.static(path.join(__dirname, 'uploads')));
-
 // middlewares
 app.use(express.json());
 app.use(
   cors({
     origin: function (origin, callback) {
-      // Allow requests with no origin (like mobile apps or Postman)
       if (!origin) return callback(null, true);
 
       const allowedOrigins =
@@ -41,7 +37,7 @@ app.use(
       ) {
         callback(null, true);
       } else {
-        callback(null, true); // Allow all origins for now
+        callback(null, true);
       }
     },
     credentials: true,
@@ -50,8 +46,8 @@ app.use(
   })
 );
 
-// Assicurati che il nome della cartella 'uploads' coincida perfettamente
-app.use('/images', express.static('uploads'));
+// Servizio file statici con percorso ASSOLUTO (Rimuovi qualsiasi altro duplicato di express.static)
+app.use('/images', express.static(path.join(__dirname, 'uploads')));
 
 // Middleware per garantire la connessione al DB
 app.use(async (req, res, next) => {
@@ -74,7 +70,7 @@ app.get('/', (req, res) => {
   res.send('Ciao Amici, API funziona!');
 });
 
-// Avvio del server sia in Locale che su Render
+// Avvio del server
 app.listen(port, '0.0.0.0', async () => {
   console.log(`Il Server lavora sulla porta ${port}`);
   try {
