@@ -8,7 +8,8 @@ import Orders from './pages/Orders';
 import { Toaster } from 'react-hot-toast';
 
 const App = () => {
-  const url = import.meta.env.VITE_API_URL || 'http://localhost:4000';
+  const url = import.meta.env.VITE_API_URL || 'https://pomodoro.onrender.com';
+  
   return (
     <div>
       <Toaster />
