@@ -66,7 +66,7 @@ const Login = ({ setShowLogin }) => {
               name="name"
               onChange={onChangeHandler}
               value={data.name}
-              className=" border-2 border-green-500 rounded p-2"
+              className=" border-2 border-green-600 rounded p-2"
               type="text"
               placeholder="Il Tuo Nome"
               required
@@ -77,8 +77,8 @@ const Login = ({ setShowLogin }) => {
             name="email"
             onChange={onChangeHandler}
             value={data.email}
-            className=" border-2 border-green-500 rounded p-2"
-            type="text"
+            className=" border-2 border-green-600 rounded p-2"
+            type="email"
             placeholder="La Tua Email"
             required
           />
@@ -87,9 +87,9 @@ const Login = ({ setShowLogin }) => {
             name="password"
             onChange={onChangeHandler}
             value={data.password}
-            className=" border-2 border-green-500 rounded p-2"
-            type="text"
-            placeholder="La Tua Password"
+            className=" border-2 border-green-600 rounded p-2"
+            type="password"
+            placeholder="Password...."
             required
           />
         </div>
